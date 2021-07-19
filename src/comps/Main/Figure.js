@@ -13,13 +13,13 @@ const Figure = ({ random_GameWord, correctLetters, wrongLetters }) => {
     const renderSwitch = (param) => {
         switch (param) {
             case 3:
-                return <p>Random Gift Letter(s) : <br /><br />{random_Gift1} </p>
+                return <p style={{ paddingTop: '10px' }}>Try : <br /> <br /> {random_Gift1} </p>
 
             case 4:
-                return <p>Random Gift Letter(s) : <br /><br />{random_Gift1} &nbsp; &nbsp;{random_Gift2}</p>;
+                return <p style={{ paddingTop: '10px' }}>Try : <br /> <br /> {random_Gift1} &nbsp; {random_Gift2}</p>;
 
             case 5:
-                return <p>Random Gift Letter(s) : <br /><br />{random_Gift1} &nbsp; &nbsp;{random_Gift2} &nbsp;{random_Gift3} </p>;
+                return <p style={{ paddingTop: '10px' }}>Try : <br /> <br /> {random_Gift1} &nbsp; {random_Gift2}&nbsp;{random_Gift3} </p>;
             default:
                 return '';
         }
@@ -64,7 +64,7 @@ const Figure = ({ random_GameWord, correctLetters, wrongLetters }) => {
                     </svg>
                 </div>
                 <div className="wronglist" style={{ textAlign: 'center' }}>
-                    <h3 style={{ marginBottom: '20px' }}>Wrong Words:</h3>
+                    <h3 style={{ marginBottom: '20px' }}>Wrong Words :</h3>
                     {wrongLetters.map((letter, index) => {
                         return (
 

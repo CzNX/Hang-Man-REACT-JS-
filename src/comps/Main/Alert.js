@@ -15,7 +15,7 @@ const Alert = ({ setAlert, alert }) => {
 
     return (
         <section className='alert' style={{ textAlign: 'center' }}>
-            <div style={{ color: 'black' }}>Letter Already Entered !
+            <div style={{ color: 'red', marginTop: '10px' }}>Letter Already Entered !
                 <p>Try Another :D</p>
             </div>
         </section>
