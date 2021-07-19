@@ -46,7 +46,6 @@ const Main = () => {
     // APP main function 
 
     const main_input_function = (letter) => {
-
         if (random_GameWord.includes(letter)) {
             if (!correctLetters.includes(letter)) {
                 setCorrectLetters(currentLetters => [...currentLetters, letter]);
@@ -64,11 +63,20 @@ const Main = () => {
             }
         }
 
+
+
     }
 
     // function for onscreen keyboard
     const handleGuess = (letter) => {
-        main_input_function(letter);
+        if (play) {
+            main_input_function(letter);
+
+        }
+        else {
+            setPlay(false)
+
+        }
 
     }
 

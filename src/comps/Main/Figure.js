@@ -64,7 +64,7 @@ const Figure = ({ random_GameWord, correctLetters, wrongLetters }) => {
                     </svg>
                 </div>
                 <div className="wronglist" style={{ textAlign: 'center' }}>
-                    <h3 style={{ marginBottom: '20px' }}>Wrong Words : </h3>
+                    <h3 style={{ marginBottom: '20px' }}>Wrong Words:</h3>
                     {wrongLetters.map((letter, index) => {
                         return (
 
@@ -98,10 +98,6 @@ const Figure = ({ random_GameWord, correctLetters, wrongLetters }) => {
                         </span>
                     )
                 })}
-            </div>
-
-            <div className="mobilekb">
-
             </div>
         </>
     )

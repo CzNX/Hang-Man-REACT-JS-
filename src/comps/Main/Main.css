@@ -41,7 +41,7 @@
 }
 
 .show {
-  transform: translateY(-50px);
+  transform: translateY(100px);
 }
 
 button {
@@ -80,7 +80,7 @@ button:hover {
   }
   .btn-section {
     display: flex;
-    max-width: 80%;
+    max-width: 90%;
     margin: auto;
     flex-wrap: wrap;
     justify-content: center;
@@ -91,6 +91,7 @@ button:hover {
     margin: 4px;
     background-color: black;
     color: #fff;
+    padding: 10px 15px;
   }
   .btn-input:active {
     transform: scale(1.4);
