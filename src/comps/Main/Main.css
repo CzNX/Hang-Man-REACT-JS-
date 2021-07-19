@@ -63,6 +63,10 @@ button:hover {
   margin-top: 10px;
 }
 
+.btn-section {
+  display: none;
+}
+
 /* resp */
 
 @media (max-width: 768px) {
@@ -74,10 +78,31 @@ button:hover {
   .popup {
     padding: 40px 30px;
   }
-  .mobilekb input {
+  .btn-section {
     display: flex;
-    flex-direction: column;
+    max-width: 80%;
+    margin: auto;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    text-align: center;
+  }
+  .btn-input {
+    margin: 4px;
+    background-color: black;
+    color: #fff;
+  }
+  .btn-input:active {
+    transform: scale(1.4);
+  }
+  .header {
+    margin-bottom: 0 !important;
+    margin-top: 8px !important;
+  }
+  .main {
+    margin: 0;
+    padding: 0;
+    justify-content: flex-start;
+    justify-items: flex-start;
   }
 }

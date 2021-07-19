@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react'
-import { generateButtons } from '../Buttons';
+import { GenerateButtons } from '../Button';
+
 import Alert from './Alert';
 import { gameWords } from './data';
 import Figure from './Figure'
 import './Main.css'
 import Popup from './Popup';
+
 
 
 // const gameWords = ['python', 'java', 'javascript', 'ruby', 'dart', 'golang', 'php', 'react', 'android', 'html', 'css', 'xtha'];
@@ -23,39 +25,52 @@ const Main = () => {
 
 
 
-    // main key action
+    // function for physical keyboard
     useEffect(() => {
         function handleInput(e) {
             const { key, keyCode } = e;
             if (play && keyCode >= 65 && keyCode <= 90) {
-                const letter = key.toLowerCase();
-                if (random_GameWord.includes(letter)) {
-                    if (!correctLetters.includes(letter)) {
-                        setCorrectLetters(currentLetters => [...currentLetters, letter]);
-                    } else {
-                        //   show(setShowNotification);
-                        setAlert(true)
-                    }
-                }
-                else {
-                    if (!wrongLetters.includes(letter)) {
-                        setWrongLetters(currentLetters => [...currentLetters, letter]);
-                    } else {
-                        //   show(setShowNotification);
-                        setAlert(true)
-                    }
-                }
+                const letter = key.toUpperCase();
+                main_input_function(letter);
             }
 
         }
 
-        window.addEventListener('keyup input', handleInput)
+        window.addEventListener('keydown', handleInput)
         return () => {
-            window.removeEventListener('keyup input', handleInput)
+            window.removeEventListener('keydown', handleInput)
         }
     }, [correctLetters, wrongLetters, play, alert])
 
 
+    // APP main function 
+
+    const main_input_function = (letter) => {
+
+        if (random_GameWord.includes(letter)) {
+            if (!correctLetters.includes(letter)) {
+                setCorrectLetters(currentLetters => [...currentLetters, letter]);
+            } else {
+                //   show(setShowNotification);
+                setAlert(true)
+            }
+        }
+        else {
+            if (!wrongLetters.includes(letter)) {
+                setWrongLetters(currentLetters => [...currentLetters, letter]);
+            } else {
+                //   show(setShowNotification);
+                setAlert(true)
+            }
+        }
+
+    }
+
+    // function for onscreen keyboard
+    const handleGuess = (letter) => {
+        main_input_function(letter);
+
+    }
 
     // button action
     var handleRestart = () => {
@@ -84,6 +99,11 @@ const Main = () => {
                 handleRestart={handleRestart}
                 gameWords={gameWords}
                 random_GameWord={random_GameWord} correctLetters={correctLetters} wrongLetters={wrongLetters} setPlay={setPlay} />
+
+            <div className="btn-section">
+                <GenerateButtons handleGuess={handleGuess} />
+            </div>
+
 
         </section>
     )
