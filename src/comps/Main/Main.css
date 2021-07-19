@@ -41,7 +41,7 @@
 }
 
 .show {
-  transform: translateY(100px);
+  transform: translateY(10px);
 }
 
 button {
@@ -105,5 +105,8 @@ button:hover {
     padding: 0;
     justify-content: flex-start;
     justify-items: flex-start;
+  }
+  .show {
+    transform: translateY(100px);
   }
 }
