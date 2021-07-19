@@ -102,7 +102,7 @@ const Figure = ({ random_GameWord, correctLetters, wrongLetters }) => {
 
             <div className="mobilekb">
                 <label htmlFor="input">Start</label>
-                <input type='button' ></input>
+                <input type='text' ></input>
 
             </div>
         </>
