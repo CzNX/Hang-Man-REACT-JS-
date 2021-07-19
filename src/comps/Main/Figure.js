@@ -19,7 +19,7 @@ const Figure = ({ random_GameWord, correctLetters, wrongLetters }) => {
                 return <p style={{ paddingTop: '10px' }}>Try : <br /> <br /> {random_Gift1} &nbsp; {random_Gift2}</p>;
 
             case 5:
-                return <p style={{ paddingTop: '10px' }}>Try : <br /> <br /> {random_Gift1} &nbsp; {random_Gift2}&nbsp;{random_Gift3} </p>;
+                return <p style={{ paddingTop: '10px' }}>Try : <br /> <br /> {random_Gift1} &nbsp; {random_Gift2} &nbsp; {random_Gift3} </p>;
             default:
                 return '';
         }
