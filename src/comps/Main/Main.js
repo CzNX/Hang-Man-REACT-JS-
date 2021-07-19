@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { generateButtons } from '../Buttons';
 import Alert from './Alert';
 import { gameWords } from './data';
 import Figure from './Figure'
@@ -19,9 +20,12 @@ const Main = () => {
     const [popup, setPopup] = useState(false)
 
 
+
+
+
     // main key action
     useEffect(() => {
-        const handleInput = e => {
+        function handleInput(e) {
             const { key, keyCode } = e;
             if (play && keyCode >= 65 && keyCode <= 90) {
                 const letter = key.toLowerCase();
@@ -44,9 +48,10 @@ const Main = () => {
             }
 
         }
-        window.addEventListener('keydown', handleInput)
+
+        window.addEventListener('keyup input', handleInput)
         return () => {
-            window.removeEventListener('keydown', handleInput)
+            window.removeEventListener('keyup input', handleInput)
         }
     }, [correctLetters, wrongLetters, play, alert])
 

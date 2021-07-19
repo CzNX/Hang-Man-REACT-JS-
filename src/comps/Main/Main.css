@@ -63,19 +63,6 @@ button:hover {
   margin-top: 10px;
 }
 
-.mobilekb {
-  min-height: 5vh;
-}
-.mobilekb input {
-  padding: 10px 30px;
-  background-color: rgb(8, 9, 9);
-  border: none;
-  outline: none;
-  cursor: pointer;
-  color: #fff;
-  display: none;
-}
-
 /* resp */
 
 @media (max-width: 768px) {
